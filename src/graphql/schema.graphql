@@ -1,0 +1,23 @@
+scalar DateTime
+
+type Author {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  posts: [Post!]!
+}
+
+type Post {
+  id: Int!
+  title: String!
+  votes: Int
+  content: String!
+  name: String!
+  createdDt: DateTime!
+  updatedDt: DateTime!
+}
+
+type Query {
+  author(id: Int!): Author
+  post(id: Int!): Post
+}
