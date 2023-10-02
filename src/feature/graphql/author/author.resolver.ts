@@ -2,12 +2,15 @@ import { Inject } from '@nestjs/common';
 import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { FindAuthorUseCase } from './usecase/find-author.usecase';
 import { AuthorEntity } from './domain/model/author.entity';
+import { FindPostUseCase } from '../post/usecase/find-post.usecase';
 
 @Resolver('Author') // resolveField의 parent를 가리킬 때 참조된다.
 export class AuthorResolver {
   constructor(
     @Inject(FindAuthorUseCase)
     private readonly findAuthorUseCase: FindAuthorUseCase,
+    @Inject(FindPostUseCase)
+    private readonly findPostUseCase: FindPostUseCase,
   ) {}
 
   @Query('author')
@@ -19,7 +22,6 @@ export class AuthorResolver {
   // 혹은 resolveField의 인수로 그 이름을 넘겨준다.
   @ResolveField('posts')
   async getPosts(@Parent() author: AuthorEntity) {
-    // return await this.findPostUseCase.findOne(author.id);
-    return null;
+    return await this.findPostUseCase.findManyByAuthorId(author.id);
   }
 }
