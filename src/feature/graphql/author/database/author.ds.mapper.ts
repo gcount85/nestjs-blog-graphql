@@ -5,7 +5,7 @@ import { AuthorGateway } from '../domain/gateway/author.gateway';
 import { AuthorEntity } from '../domain/gateway/model/author.entity';
 import { PrismaService } from 'src/prisma/prisma.service';
 
-@Injectable() // 얜 왜 injectable이 붙지?
+@Injectable() // 얜 왜 injectable이 붙지 -> 다른 모듈에서 써야 해서
 export class AuthorDsMapper implements AuthorGateway {
   constructor(private readonly prisma: PrismaService) {}
 
