@@ -2,7 +2,7 @@
 
 import { Inject } from '@nestjs/common';
 import { FindAuthorUseCase } from './find-author.usecase';
-import { AuthorEntity } from '../domain/gateway/model/author.entity';
+import { AuthorEntity } from '../domain/model/author.entity';
 import { AuthorGateway } from '../domain/gateway/author.gateway';
 
 export class FindAuthorInteractor implements FindAuthorUseCase {

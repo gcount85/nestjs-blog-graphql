@@ -4,12 +4,12 @@ import { AuthorInterface } from './dto/author.interface';
 
 export class AuthorEntity {
   private readonly _id: number;
-  private readonly _createdAt: Date;
-  private readonly _updatedAt: Date;
+  private readonly _firstName: string;
+  private readonly _lastName: string;
 
   constructor(prisma: AuthorInterface) {
     this._id = prisma.id;
-    this._createdAt = prisma.createdAt;
-    this._updatedAt = prisma.updatedAt;
+    this._firstName = prisma.firstName;
+    this._lastName = prisma.lastName;
   }
 }
