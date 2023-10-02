@@ -22,6 +22,8 @@ export class AuthorResolver {
   // 혹은 resolveField의 인수로 그 이름을 넘겨준다.
   @ResolveField('posts')
   async getPosts(@Parent() author: AuthorEntity) {
+    return null;
+    //@ts-ignore
     return await this.findPostUseCase.findManyByAuthorId(author.id);
   }
 }

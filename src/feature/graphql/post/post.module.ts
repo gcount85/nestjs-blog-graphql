@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { PostResolver } from './post.resolver';
-import { FindPostUseCase } from '../usecase/find-post.usecase';
-import { FindPostInteractor } from '../usecase/find-post.interactor';
-import { PostGateway } from '../domain/gateway/post.gateway';
-import { PostDsMapper } from '../database/post.ds.mapper';
+import { FindPostUseCase } from './usecase/find-post.usecase';
+import { FindPostInteractor } from './usecase/find-post.interactor';
+import { PostGateway } from './domain/gateway/post.gateway';
+import { PostDsMapper } from './database/post.ds.mapper';
 
 @Module({
   providers: [

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AuthorResolver } from './author.resolver';
-import { PostModule } from '../post/post/post.module';
+import { PostModule } from '../post/post.module';
 
 @Module({
   imports: [PostModule], // 모듈 임포트 맞나? -> 맞음
